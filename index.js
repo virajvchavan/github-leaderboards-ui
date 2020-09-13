@@ -15,17 +15,17 @@ const fetchData = async () => {
 const generateHTML = (users) => {
     let tableEle = document.getElementById("leaderboard-table");
     let htmlToAppend = `<tr class="heading-row">
-        <th class="table-heading center">Username</th>
-        <th class="table-heading center">Merged PRs</th>
-        <th class="table-heading center">Closed PRs</th>
-        <th class="table-heading center">Open PRs</th>
+        <th class="table-heading">Username</th>
+        <th class="table-heading">Merged PRs</th>
+        <th class="table-heading">Closed PRs</th>
+        <th class="table-heading">Open PRs</th>
     </tr>`;
     users.forEach(user => {
-        htmlToAppend += `<tr>
-            <td class="table-data left"><a class="username" href="https://github.com/${user.username}" target="_blank"> ${user.username}</a></td>
-            <td class="table-data center">${user.merged_prs || 0}</td>
-            <td class="table-data center">${user.closed_prs || 0}</td>
-            <td class="table-data center">${user.open_prs || 0}</td>
+        htmlToAppend += `<tr class="data-row">
+            <td class="table-data username"><a class="username" href="https://github.com/${user.username}" target="_blank"> ${user.username}</a></td>
+            <td class="table-data userdata">${user.merged_prs || 0}</td>
+            <td class="table-data userdata"${user.closed_prs || 0}</td>
+            <td class="table-data userdata">${user.open_prs || 0}</td>
         </tr>`;
     });
     tableEle.innerHTML = htmlToAppend;

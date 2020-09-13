@@ -1,57 +1,62 @@
-
- .hidden{
-    display: none;
-        }
 body{
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Krona One', sans-serif;
 	margin: 0;
 	padding: 0;
-	}
-#leaderboard-table{
+}
+.hidden{
+    display: none;
+}
+table{
 	width: 70%;
 	margin: 0 auto;
 	border-collapse: collapse;
-	box-shadow: 15px 5px 90px;
+	box-shadow: 5px 5px 20px;
 	position: relative;
 	top: 130px;
 }
 h1{
-	text-align: center;
 	position: fixed;
 	top:0px;
-	background-image: linear-gradient(to bottom right, rgb(92, 4, 46) , rgb(184, 79, 129));
+	background-image: linear-gradient(to bottom right, rgb(92, 4, 46) , rgb(200, 79, 129));
 	color:white;
 	width: 100%;
 	z-index: 1;
 	margin:0;
 	padding: 1em 0;
-	
-	/*display: flex;
-	justify-content: center;
-	width: 100%;
-	background-color: rgb(217, 186, 178);
-	color: rgb(112, 61, 48);
-	position: fixed;
-	top:0px;
-	margin: 0;
-	padding: 1em 0;
-	z-index: 1;*/
-
+	font-weight: 100;
+	text-align: center;
 }
 .table-heading, .table-data{
 	text-align: center;
 	padding: 0.5em 0.3em;
+	font-size: 0.9rem;
 }
-td{
-	font-weight: 600;
+a{
+	display: block;
 }
 .username{
 	text-decoration: none;
-	font-weight: 550;
-	color: rgb(74, 31, 28);
+	color: black;
+	text-align: left;
+	padding-left: 1.5em;
 }
 .username:hover{
-	color: black;
+	color: white;
+}
+.data-row:nth-child(2){
+	background-color:rgb(255, 234, 122);	
+}
+.data-row:nth-child(3){
+	background-color:rgb(227, 225, 225);	
+}
+.data-row:nth-child(4){
+	background-color:rgb(252, 186, 121);
+}
+.data-row:nth-child(2):hover a, .data-row:nth-child(3):hover a, .data-row:nth-child(4):hover a{
+	background-color: rgb(201, 62, 130);	
+}
+.data-row:nth-child(2):hover, .data-row:nth-child(3):hover, .data-row:nth-child(4):hover{
+	background-color: rgb(201, 62, 130);	
 }
 tr:hover{
 	background-color: rgb(201, 62, 130);
@@ -59,47 +64,49 @@ tr:hover{
 }
 tr:hover a{
 	color: white;
+	text-decoration: underline;
 }
-.left{
-	text-align: left;
-	padding-left: 2em;
-}
-.center{
+.userdata{
 	text-align: center;
 }
-th{
+.table-heading{
+	font-weight: 100;
 	position:sticky;
 	top:100px;	
 	background-color: rgb(186, 15, 98);
 	color: white;
   	z-index: 1;
+  	padding: 1em 0;
 }
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1000px){
 	h1{
-		font-size: 1.5rem;
+		font-size: 1rem;
 	}
-	#leaderboard-table{
-		width: 95%;
-		top:100px;
+	.table-heading, .table-data{
+		font-size: 0.7rem;
 	}
-	th{
-		top:75px;
+	.table-heading{
+		top:50px;
 	}
-	.left{
+	.username{
 		padding-left: 0.5em;
+	}
+	table{
+		width: 95%;
+		top:80px;
 	}
 }
 @media screen and (max-width: 460px){
 	h1{
-		font-size: 1rem;
-	}
-	th, td{
 		font-size: 0.8rem;
 	}
-	th{
-		top:50px;
+	.table-heading, .table-data{
+		font-size: 0.6rem;
 	}
-	#leaderboard-table{
-		top:70px;
+	.table-heading{
+		top:40px;
+	}
+	table{
+		top:60px;
 	}
 }
