@@ -14,18 +14,18 @@ const fetchData = async () => {
 
 const generateHTML = (users) => {
     let tableEle = document.getElementById("leaderboard-table");
-    let htmlToAppend = `<tr>
-        <th>Username</th>
-        <th>Merged PRs</th>
-        <th>Closed PRs</th>
-        <th>Open PRs</th>
+    let htmlToAppend = `<tr class="heading-row">
+        <th class="table-heading">Username</th>
+        <th class="table-heading">Merged PRs</th>
+        <th class="table-heading">Closed PRs</th>
+        <th class="table-heading">Open PRs</th>
     </tr>`;
     users.forEach(user => {
-        htmlToAppend += `<tr>
-            <td><a href="https://github.com/${user.username}" target="_blank"> ${user.username}</a></td>
-            <td>${user.merged_prs || 0}</td>
-            <td>${user.closed_prs || 0}</td>
-            <td>${user.open_prs || 0}</td>
+        htmlToAppend += `<tr class="data-row">
+            <td class="table-data username"><a class="username" href="https://github.com/${user.username}" target="_blank"> ${user.username}</a></td>
+            <td class="table-data userdata">${user.merged_prs || 0}</td>
+            <td class="table-data userdata"${user.closed_prs || 0}</td>
+            <td class="table-data userdata">${user.open_prs || 0}</td>
         </tr>`;
     });
     tableEle.innerHTML = htmlToAppend;
