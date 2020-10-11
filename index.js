@@ -24,7 +24,7 @@ const generateHTML = (users) => {
         htmlToAppend += `<tr class="data-row">
             <td class="table-data username"><a class="username" href="https://github.com/${user.username}" target="_blank"> ${user.username}</a></td>
             <td class="table-data userdata">${user.merged_prs || 0}</td>
-            <td class="table-data userdata"${user.closed_prs || 0}</td>
+            <td class="table-data userdata">${user.closed_prs || 0}</td>
             <td class="table-data userdata">${user.open_prs || 0}</td>
         </tr>`;
     });
