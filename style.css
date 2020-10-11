@@ -17,7 +17,7 @@ table{
 h1{
 	position: fixed;
 	top:0px;
-	background-image: linear-gradient(to bottom right, rgb(92, 4, 46) , rgb(200, 79, 129));
+	background-image: linear-gradient(to bottom, black, #1D725B);
 	color:white;
 	width: 100%;
 	z-index: 1;
@@ -53,13 +53,13 @@ a{
 	background-color:rgb(252, 186, 121);
 }
 .data-row:nth-child(2):hover a, .data-row:nth-child(3):hover a, .data-row:nth-child(4):hover a{
-	background-color: rgb(201, 62, 130);	
+	background-color: #3BCEA7;	
 }
 .data-row:nth-child(2):hover, .data-row:nth-child(3):hover, .data-row:nth-child(4):hover{
-	background-color: rgb(201, 62, 130);	
+	background-color: #3BCEA7;	
 }
 tr:hover{
-	background-color: rgb(201, 62, 130);
+	background-color: #3BCEA7;
 	color: white;
 }
 tr:hover a{
@@ -73,7 +73,7 @@ tr:hover a{
 	font-weight: 100;
 	position:sticky;
 	top:100px;	
-	background-color: rgb(186, 15, 98);
+	background-color: #1D725B;
 	color: white;
   	z-index: 1;
   	padding: 1em 0;
