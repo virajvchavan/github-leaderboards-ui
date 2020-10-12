@@ -1,17 +1,20 @@
 const endpoint = "https://ohwoj3u4oi.execute-api.us-east-1.amazonaws.com/dev/prs?";
 
 const fetchData = async (owner, repo) => {
+    let errorEle = document.getElementById("status");
+    errorEle.className = "";
+    errorEle.innerHTML = "<div class='loading-text'>Loading...</div>";
     let res = await fetch(endpoint + `owner=${owner}&repo=${repo}`);
     let data = await res.json();
     if (data.status == "done") {
         generateHTML(data.users);
+        errorEle.className = "hidden";
     } else if(data.status == "processing") {
-        document.getElementById("leaderboard-table").innerHTML = "<tr><th>Loading...</th></tr>";
         setTimeout(() => {
             fetchData(owner, repo);
         }, 4000);
     } else {
-        let errorEle = document.getElementById("error-message");
+        let errorEle = document.getElementById("status");
         errorEle.className = "";
         errorEle.innerText = "Error getting the leaderboard.";
     }
@@ -34,6 +37,8 @@ const generateHTML = (users) => {
         </tr>`;
     });
     tableEle.innerHTML = htmlToAppend;
+    let errorEle = document.getElementById("status");
+    errorEle.className = "hidden";
 }
 
 // fetchData();
