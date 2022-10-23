@@ -137,6 +137,11 @@ tr:hover a{
 		top:40px;
 	}
 	.leaderboard table{
-		top:60px;
+		top:10px;
+	}
+	#repoName{
+		text-align:center;
+		margin-top:13px;
+		width:180px;
 	}
 }
