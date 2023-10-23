@@ -6,6 +6,17 @@ body{
 .hidden{
     display: none;
 }
+#background-video{
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+  }
 .leaderboard table{
 	width: 70%;
 	margin: 0 auto;
@@ -17,7 +28,7 @@ body{
 .topBar{
 	position: fixed;
 	top:0px;
-	background-color: white;
+	/* background-color: white; */
 	width: 100%;
 	z-index: 1;
 	margin:0;
@@ -30,7 +41,7 @@ body{
 	margin-bottom: 2em;
 }
 .topBar .subtext {
-	color: #535353;
+	color: #12aa82;
 }
 input.repo-name, input.repo-name:focus{
 	color: #1D725B;
